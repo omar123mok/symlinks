@@ -14,13 +14,7 @@ jobs:
         run: |
           pwd
 
-      - name: List contents of mmm directory (using ls)
-        run: |
-          ls mmm/
-
-      - name: List contents of mmm directory (using ls -l)
-        run: |
-          ls -l mmm/
+      
       - name: Copy locals.tf
         run: |
           cp proprietary-content-cms-live/locals.tf make-wow
