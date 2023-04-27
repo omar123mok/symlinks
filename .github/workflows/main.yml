@@ -4,12 +4,12 @@ on:
   push
   
 jobs:
-  duplicate:
+  copy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Duplicate Symlinks
+      - name: Copy locals.tf
         run: |
-          ln -s $(pwd)/proprietary-content-cms-live/locals.tf $(pwd)/make-wow/
+          cp proprietary-content-cms-live/locals.tf make-wow
