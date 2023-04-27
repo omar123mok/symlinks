@@ -1,4 +1,4 @@
-name: Duplicate Symlinks
+name: Move Symlinks
 
 on:
   push
