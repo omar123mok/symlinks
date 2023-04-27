@@ -19,7 +19,7 @@ jobs:
       
       - name: Copy locals.tf
         run: |
-          mv proprietary-content-cms-live/locals.tf make-wow
+          cp -P make-wow/locals.tf proprietary-content-cms-live
           
       - name: Commit changes
         run: |
