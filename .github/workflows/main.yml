@@ -15,7 +15,7 @@ jobs:
           pwd
       - name: List contents of mmm directory (using ls -l)
         run: |
-          ll
+          ls
       
       - name: Copy locals.tf
         run: |
