@@ -1,9 +1,7 @@
 name: Duplicate Symlinks
 
 on:
-  push:
-    paths:
-      - 'source/**'
+  push
 
 jobs:
   duplicate:
