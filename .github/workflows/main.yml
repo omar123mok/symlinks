@@ -3,10 +3,15 @@ name: Move Symlinks
 on:
   workflow_dispatch:
     inputs:
-      trigger:
-        description: 'Trigger the workflow via Lambda'
+      source_folder:
+        description: 'Source Folder'
+        default: make-wow
         required: true
-        default: ''
+      destination_folder:
+        description: 'Destination Folder'
+        required: true
+      
+        
 jobs:
   copy:
     runs-on: ubuntu-latest
@@ -23,7 +28,7 @@ jobs:
       
       - name: Copy locals.tf
         run: |
-          cp -P make-wow/locals.tf proprietary-content-cms-live
+          cp -P ${{github.event.inputs.source_folder}}/locals.tf ${{github.event.inputs.destination_folder}}
           
       - name: Commit changes
         run: |
