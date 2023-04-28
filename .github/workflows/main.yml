@@ -1,8 +1,12 @@
 name: Move Symlinks
 
 on:
-  push
-  
+  workflow_dispatch:
+    inputs:
+      trigger:
+        description: 'Trigger the workflow via Lambda'
+        required: true
+        default: ''
 jobs:
   copy:
     runs-on: ubuntu-latest
