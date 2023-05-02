@@ -1,4 +1,4 @@
-name: Move Symlinks
+name: Copy-Symlinks
 
 on:
   workflow_dispatch:
@@ -23,9 +23,9 @@ jobs:
       - name: Print current directory
         run: |
           pwd
-      - name: List contents of mmm directory (using ls -l)
+      - name: List contents of current directory
         run: |
-          ls
+          ll -R *
       
       - name: Copy locals.tf
         run: |
@@ -40,5 +40,5 @@ jobs:
             git commit -m "Update symlinks"
             git push
           else
-            echo "No can do!"
+            echo "Symlinks already present."
           fi
