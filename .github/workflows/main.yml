@@ -31,6 +31,7 @@ jobs:
           cp -P ${{github.event.inputs.source_folder}}/locals.tf ${{github.event.inputs.destination_folder}}
           
       - name: check
+        if: always()
         run: expr git status --short 
 #       - name: Commit changes
 #         run: |
