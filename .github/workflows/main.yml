@@ -5,11 +5,12 @@ on:
     inputs:
       source_folder:
         description: 'Source Folder'
-        default: make-wow
+        default: proprietary-content-cms-live
         required: true
       destination_folder:
         description: 'Destination Folder'
         required: true
+        default: make-wow
       
         
 jobs:
@@ -33,10 +34,10 @@ jobs:
       - name: Commit changes
         run: |
           github_status = $(git status --short) 
-          if n=${#str} > 0:
+          cat github_status
+          if n=${#github_status} > 0:
             git config --global user.email "Mirza_Baig@epam.com"
             git config --global user.name "omar123mok"
             git add -A
             git commit -m "Update symlinks"
             git push
-
