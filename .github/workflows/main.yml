@@ -30,11 +30,13 @@ jobs:
         run: |
           cp -P ${{github.event.inputs.source_folder}}/locals.tf ${{github.event.inputs.destination_folder}}
           
-      - name: Commit changes
-        run: |
-          git config --global user.email "Mirza_Baig@epam.com"
-          git config --global user.name "omar123mok"
-          git add -A
-          git commit -m "Update symlinks"
-          git push
+      - name: check
+        run: expr git status --short 
+#       - name: Commit changes
+#         run: |
+#           git config --global user.email "Mirza_Baig@epam.com"
+#           git config --global user.name "omar123mok"
+#           git add -A
+#           git commit -m "Update symlinks"
+#           git push
 
