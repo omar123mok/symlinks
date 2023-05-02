@@ -34,7 +34,7 @@ jobs:
       - name: Commit changes
         run: |
           git status --short > github_status.txt
-          github_status = 
+          github_status = $(cat github_status.txt)
           if [ -n "$github_status" ]; then
             git config --global user.email "Mirza_Baig@epam.com"
             git config --global user.name "omar123mok"
