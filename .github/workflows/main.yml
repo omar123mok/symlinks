@@ -33,12 +33,12 @@ jobs:
           
       - name: Commit changes
         run: |
-          git status --short > github_status.txt
-          github_status = $(cat github_status.txt)
-          if [ -n "$github_status" ]; then
+          if [[ -n "$(git status --short)" ]]; then
             git config --global user.email "Mirza_Baig@epam.com"
             git config --global user.name "omar123mok"
             git add -A
             git commit -m "Update symlinks"
             git push
+          else:
+            echo "No can do!"
           fi
