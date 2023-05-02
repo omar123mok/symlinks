@@ -39,6 +39,6 @@ jobs:
             git add -A
             git commit -m "Update symlinks"
             git push
-          else:
+          else
             echo "No can do!"
           fi
