@@ -35,9 +35,10 @@ jobs:
         run: |
           github_status = $(git status --short) 
           cat github_status
-          if n=${#github_status} > 0:
+          if [ -n "$github_status" ]; then
             git config --global user.email "Mirza_Baig@epam.com"
             git config --global user.name "omar123mok"
             git add -A
             git commit -m "Update symlinks"
             git push
+          fi
