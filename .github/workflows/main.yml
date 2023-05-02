@@ -32,7 +32,7 @@ jobs:
           
       - name: check
         if: always()
-        run: expr git status --short 
+        run: git status --short 
 #       - name: Commit changes
 #         run: |
 #           git config --global user.email "Mirza_Baig@epam.com"
